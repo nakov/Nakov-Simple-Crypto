@@ -130,7 +130,7 @@ Example:
   - Suppose encryptedMsg = `57A97ED801FFA0A979A58F72B4DF` and password = `p@ss`
   - The encrypted message can be decomposed to:
     - `57A97ED8` (msgHash) + `01FF` (char 0) + `A0A9` (char 1) + `79A5` (char 2) + `8F72` (char 3) + `B4DF` (char 4)
-  - To decrypt the encrypted message we XOR it with the same encryption hash sequence, used for the encryption:
+  - To decrypt the encrypted message we XOR it with the same encryption hash sequence, used during the encryption:
     - decryptedChar[`0`] = `01FF` xor Hash(`0 | p@ss | 57A97ED8`) = `h`
     - decryptedChar[`1`] = `A0A9` xor Hash(`1 | p@ss | 57A97ED8`) = `e`
     - decryptedChar[`2`] = `79A5` xor Hash(`2 | p@ss | 57A97ED8`) = `l`
