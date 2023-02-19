@@ -49,9 +49,9 @@ to build two cryptographic primitives:
 MixBlocks(block, state) --> new state:
     repeat 16 times:
         state = state * 28657 + block * 514229 + 2971215073
-  		  block = block * 1597 + 433494437
+        block = block * 1597 + 433494437
         state = state <<< 7
-  			block = block >>>  13
+        block = block >>>  13
     return state
 ```
 
