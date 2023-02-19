@@ -43,7 +43,9 @@ due to **[collision attack](https://en.wikipedia.org/wiki/Collision_attack)** an
 ### Designing a Simple Crypto Hash Function
 
 We follow the classical **[Merkle–Damgård construction scheme](https://en.wikipedia.org/wiki/Merkle%E2%80%93Damgard_construction)**
-to build two cryptographic primitives:
+to build two cryptographic primitives `MixBlocks(block, state)` and `Hash(msg)`.
+
+The **block mixing** primitive works as follows:
 
 ```
 MixBlocks(block, state) --> new state:
@@ -59,7 +61,8 @@ Notes:
   - The magic numbers above are **prime numbers** (to reduce potential collissions).
   - The above design aims to make the function **irreversible**, while **preserving the entropy** from the input blocks.
 
-This is a classical **[Merkle–Damgård construction](https://en.wikipedia.org/wiki/Merkle%E2%80%93Damgard_construction)**:
+The **hash calculation** primitive follows the classical **[Merkle–Damgård construction](https://en.wikipedia.org/wiki/Merkle%E2%80%93Damgard_construction)** over the input sequence of blocks using the **block mixing** primitive:
+
 ```
 Hash(msg) --> int32:
     msg = PadMsg(msg)   // Make the message size a multiple of 32-bits
