@@ -35,7 +35,7 @@ Examples:
 
 We append the message length at the end to avoid trivial collision construction schemes.
 
-Warning: more simple padding schemes may be insecure for using with hash functions,
+Warning: more simple padding schemes (e.g. just add a few "*" at the end) may be insecure for using with hash functions,
 due to **[collision attack](https://en.wikipedia.org/wiki/Collision_attack)** and
 **[length-extension attack](https://en.wikipedia.org/wiki/Length_extension_attack)** vulnerabilities.
 
