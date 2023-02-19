@@ -117,6 +117,16 @@ and we use the same password to encrypt multiple messages (e.g. 50 text files in
 ### Decryption Algorithm
 
 Decryption follows the same scheme, like the encryption:
+
+```
+Decrypt(encryptedMsg, password):
+    msgHash = extract and remove the first 8 letters from encryptedMsg
+    for i = 0 ... msg_length-1:
+        decryptedChar[i] = substring(encryptedMsg, i*4, 4) xor Hash(i + " | " + password + " | " + msgHash)
+    return decrypted chars
+```
+
+Example:
   - Suppose encryptedMsg = `57A97ED801FFA0A979A58F72B4DF` and password = `p@ss`
   - The encrypted Messages can be decomposed to: `57A97ED8` (msgHash) + 
     `01FF` (char 0) + `A0A9` (char 1) + `79A5` (char 2) + `8F72` (char 3) + `B4DF` (char 4)
