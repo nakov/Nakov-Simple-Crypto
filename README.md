@@ -28,7 +28,7 @@ msg + 0...3 times "*" + msg_length
 
 Examples:
   - `ab` --> `ab*2` (1 block)
-  - `abcdefg" --> `abcdefg7` (2 blocks)
+  - `abcdefg` --> `abcdefg7` (2 blocks)
   - `a` --> `a**1` (1 block)
   - `a**` --> `a**3` (1 block)
   - `abcdedghi` --> `abcdedghi**9` (3 blocks)
