@@ -1,6 +1,6 @@
 # Nakov's Simple Crypto Algorithms
 
-Simple crypto algorithms:
+Simple crypto algorithms, designed for educational purposes:
   - 32-bit low-collision **hash function**
   - 32-bit **symmetric block cipher**
 
