@@ -82,7 +82,7 @@ Encrypt(msg, password):
     msgHash = Hash(msg)
     for i = 0 ... msg_length-1:
         encryptedChar[i] = msg[i] xor Hash(i + " | " + password + " | " + msgHash)
-    return msgHash + encrypted
+    return msgHash + encrypted chars
 ```
 
 We encrypt each letter from the input sequence by a unique and hard-to-predict hash value,
