@@ -95,11 +95,11 @@ Example:
   - Suppose we have a message msg = `hello` to be encrypted by a password `p@ss`
   - The message hash will be calculated as `57A97ED8`
   - Each message letter will be encrypted by different hash, derived from the letter offset + password + msgHash:
-    - encryptedChar[0] = `h` xor Hash(`0 | p@ss | 57A97ED8`) = `01FF`
-    - encryptedChar[1] = `e` xor Hash(`1 | p@ss | 57A97ED8`) = `A0A9`
-    - encryptedChar[2] = `l` xor Hash(`2 | p@ss | 57A97ED8`) = `79A5`
-    - encryptedChar[3] = `l` xor Hash(`3 | p@ss | 57A97ED8`) = `8F72`
-    - encryptedChar[4] = `o` xor Hash(`4 | p@ss | 57A97ED8`) = `B4DF`
+    - encryptedChar[`0`] = `h` xor Hash(`0 | p@ss | 57A97ED8`) = `01FF`
+    - encryptedChar[`1`] = `e` xor Hash(`1 | p@ss | 57A97ED8`) = `A0A9`
+    - encryptedChar[`2`] = `l` xor Hash(`2 | p@ss | 57A97ED8`) = `79A5`
+    - encryptedChar[`3`] = `l` xor Hash(`3 | p@ss | 57A97ED8`) = `8F72`
+    - encryptedChar[`4`] = `o` xor Hash(`4 | p@ss | 57A97ED8`) = `B4DF`
   - encryptedMsg = `57A97ED8` + `01FF` + `A0A9` + `79A5` + `8F72` + `B4DF` = `57A97ED801FFA0A979A58F72B4DF`
 
 The above encryption scheme design aims to generate an unique and hard-to-predict **encryption hash sequence**,
@@ -111,11 +111,11 @@ Decryption follows the same scheme, like the encryption:
   - The encrypted Messages can be decomposed to: `57A97ED8` (msgHash) + 
     `01FF` (char 0) + `A0A9` (char 1) + `79A5` (char 2) + `8F72` (char 3) + `B4DF` (char 4)
   - To decrypt the encrypted message we XOR it with the same encryption hash sequence, used for the encryption:
-    - decryptedChar[0] = `01FF` xor Hash(`0 | p@ss | 57A97ED8`) = `h`
-    - decryptedChar[1] = `A0A9` xor Hash(`1 | p@ss | 57A97ED8`) = `e`
-    - decryptedChar[2] = `79A5` xor Hash(`2 | p@ss | 57A97ED8`) = `l`
-    - decryptedChar[3] = `8F72` xor Hash(`3 | p@ss | 57A97ED8`) = `l`
-    - decryptedChar[4] = `B4DF` xor Hash(`4 | p@ss | 57A97ED8`) = `o`
+    - decryptedChar[`0`] = `01FF` xor Hash(`0 | p@ss | 57A97ED8`) = `h`
+    - decryptedChar[`1`] = `A0A9` xor Hash(`1 | p@ss | 57A97ED8`) = `e`
+    - decryptedChar[`2`] = `79A5` xor Hash(`2 | p@ss | 57A97ED8`) = `l`
+    - decryptedChar[`3`] = `8F72` xor Hash(`3 | p@ss | 57A97ED8`) = `l`
+    - decryptedChar[`4`] = `B4DF` xor Hash(`4 | p@ss | 57A97ED8`) = `o`
   - The decrypted message = `h` + `e` + `l` + `l` + `o`
 
 Note that the above encryption scheme cannot detect if the password is correct or not.
