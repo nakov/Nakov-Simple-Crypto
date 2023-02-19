@@ -146,7 +146,7 @@ To detect a wrong decryption password, we may add a **[message authentication co
 
 ### Warning: Insecure for Cryptographic Use
 
-**Warning**: this code library is **cryptographically insecure**. Don't use in production!
+This code library is **cryptographically insecure**. Don't use in production!
 
 Use this code **for educational purposes only**: to demonstrate some ideas about
 how hashing and symetric encryption algorithms may be designed.
