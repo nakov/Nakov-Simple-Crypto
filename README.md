@@ -75,6 +75,8 @@ Hash(msg) --> int32:
 
 ### Designing a Simple Symmetric Encryption Scheme
 
+### Encryption Algorithm
+
 Once we have a collision-resistant cryptographic hash function, we may design a **simple symmetric encryption scheme** as follows:
 
 ```
@@ -105,6 +107,12 @@ Example:
 The above encryption scheme design aims to generate an unique and hard-to-predict **encryption hash sequence**,
 which depends highly on the input message and the encryption password. The security of the algorithm relies on
 the difficulty to generate the same **encryption hash sequence** without knowing the encryption password.
+
+The reason to include the **input message hash** in the calculation of the encryption hash sequence is to avoid
+**revealing the encryption hash sequence** when we know a significant part of the encrypted message (e.g. its first paragraph)
+and we use the same password to encrypt multiple messages (e.g. 50 text files in an encrypted ZIP archive).
+
+### Decryption Algorithm
 
 Decryption follows the same scheme, like the encryption:
   - Suppose encryptedMsg = `57A97ED801FFA0A979A58F72B4DF` and password = `p@ss`
