@@ -151,7 +151,7 @@ To detect a wrong decryption password, we may add a **[message authentication co
 Use this code **for educational purposes only**: to demonstrate some ideas about
 how hashing and symetric encryption algorithms may be designed.
 
-Note also that 32-bit ciphers are too weak for real-world crypto hashing and encryption.
+Note also that **32-bit ciphers are too weak** for real-world crypto hashing and encryption.
 Real-world cryptosystems use blocks of size 256 or more bits to resist **[brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack)**.
 
 Always use proven crypto algorithms, designed by experts in cryptography (like SHA2, SHA3 and AES).
