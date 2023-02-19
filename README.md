@@ -85,10 +85,10 @@ Encrypt(msg, password):
     return msgHash + encrypted chars
 ```
 
-We encrypt each letter from the input sequence by a unique and hard-to-predict hash value,
-derived from the letter offset + the input password + message hash.
+We encrypt each letter from the input sequence by an **unique and hard-to-predict hash value**,
+derived from: `letter offset` + `input password` + `message hash`.
 
-The letter encryption is based on bitwise `XOR`, so it is easy to revert back to the original letter
+The letter encryption is based on **bitwise `XOR`**, so it is easy to revert back to the original letter
 when we know the encrypted letter and the encryption hash value for this letter.
 
 Example:
