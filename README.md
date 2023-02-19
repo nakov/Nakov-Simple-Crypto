@@ -1,8 +1,8 @@
 # Nakov's Simple Crypto Algorithms
 
 Simple crypto algorithms:
-  - 32-bit low-collision hash function
-  - 32-bit symmetric block cipher
+  - 32-bit low-collision **hash function**
+  - 32-bit **symmetric block cipher**
 
 
 ## Simple 32-Bit Hash + Symmetric Encryption Algorithm
