@@ -45,7 +45,7 @@ public class SimpleCrypto
 	// Calculates a hash code by a simple 32-bit Merkle–Damgård construction
 	public static uint Hash(string msg)
 	{
-		msg = PadMsg(msg);
+		msg = PadMsg(msg); // Make the message size a multiple of 32-bits
 
 		uint state = 0xA1B2C3D4; // Initial Vector (IV): a magic number
 
