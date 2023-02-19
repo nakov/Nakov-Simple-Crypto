@@ -18,8 +18,8 @@ using 32-bit blocks.
 
 ### Designing a Padding Scheme
 
-Hashing and encryption typically work on blocks of fixes size, e.g. 32-bits (4 bytes).
-When the input message size is not multiple of the block size, we need to pad it with additional chars at the end.
+Hashing and encryption typically work on **blocks of fixes size**, e.g. 32-bits (4 bytes).
+When the input message size is not multiple of the block size, we need to **pad the message** with additional chars at the end.
 
 We use the following **padding scheme**:
 ```
