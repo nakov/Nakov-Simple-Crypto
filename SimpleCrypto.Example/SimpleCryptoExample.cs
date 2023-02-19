@@ -1,5 +1,5 @@
-﻿string msg = "I am a secret message for encryption";
-string password = "s3cret~p@ss";
+﻿string msg = "hello";
+string password = "p@ss";
 Console.WriteLine("msg = " + msg);
 Console.WriteLine("hash(msg) = " + SimpleCrypto.Hash(msg).ToString("X8"));
 string encryptedMsg = SimpleCrypto.EncryptMsg(msg, password);

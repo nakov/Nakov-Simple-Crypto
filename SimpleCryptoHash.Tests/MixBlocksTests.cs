@@ -7,7 +7,7 @@ public class MixBlocksTests
 	[TestCase(0x89ABCDEFu, 0x45678901u, 0xF0F9AB2Du)]
 	[TestCase(0x11111111u, 0x22222222u, 0x66E3E41Cu)]
 	[TestCase(0xFFFFFFFFu, 0xFFFFFFFFu, 0x0757E01Bu)]
-	public void TestPadMsg(uint block1, uint block2, uint mixedBlocks)
+	public void TestMixBlocks(uint block1, uint block2, uint mixedBlocks)
 	{
 		uint actualMixedBlocks = SimpleCrypto.MixBlocks(block1, block2);
 		Assert.That(actualMixedBlocks, Is.EqualTo(mixedBlocks));
