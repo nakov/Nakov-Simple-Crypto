@@ -75,7 +75,7 @@ public class SimpleCrypto
 		for (int index = 0; index < msg.Length; index++)
 		{
 			ushort nextChar = msg[index];
-			string nextKey = msgHash + " | " + password + " | " + index;
+			string nextKey = index + " | " + password + " | " + msgHash;
 			ushort nextSecret = (ushort)Hash(nextKey);
 			ushort encryptedChar = (ushort)(nextChar ^ nextSecret);
 			string encryptedCharHex = encryptedChar.ToString("X4");
@@ -95,7 +95,7 @@ public class SimpleCrypto
 		{
 			string nextEncryptedCharHex = encryptedMsg.Substring(i, 4);
 			ushort nextEncryptedChar = Convert.ToUInt16(nextEncryptedCharHex, 16);
-			string nextKey = msgHash + " | " + password + " | " + offset;
+			string nextKey = offset + " | " + password + " | " + msgHash;
 			ushort nextSecret = (ushort)Hash(nextKey);
 			char decryptedChar = (char)(nextEncryptedChar ^ nextSecret);
 			msg.Append(decryptedChar);

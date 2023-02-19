@@ -3,13 +3,13 @@ using NUnit.Framework;
 public class DecryptMsgTests
 {
 	[TestCase("CE90AD4C", "", "")]
-	[TestCase("F4D06C9EEC76", "b", "a")]
-	[TestCase("546DBAB04138759743F6", "pass", "Msg")]
-	[TestCase("9B200BF1C7B6EE41AFB9EA7A770B15E96E558752749983E150E23AC3D77284D6",
+	[TestCase("F4D06C9E6760", "b", "a")]
+	[TestCase("546DBAB0DE8B849D70DA", "pass", "Msg")]
+	[TestCase("9B200BF162D01A2A2662795E148D72E732C1E227C2CEF56413CF020D1415EDF1",
 		"simple@password1", "I am a message")]
-	[TestCase("BCC67A2141CFE1C43F78C78165EBE53C59DA76454B5AFADB8AEC33526D619B5E16AF92D695D15A80BD8231EFC2DF52B4DD13385F09B8C9BE9C5C4D4E568F72218F01528E102EDE22AFB721AC65DC4A07DF1564904C1C6DFBA3F0416B",
+	[TestCase("BCC67A21B39BA8DBF3C99B19CC9F29384F79047468CC1472B0B85376D9D8455CAF5739B6CDA89ADC7377454FECC7809ADFBC1F22804DD912AE3F5B4339B191EFF9D39115C92FF2E13B582F7AFADFEBFB98B65BC5A400B77D599A91D6",
 		"passАБВ你好", "This message holds Unicode chars: здрасти 你好")]
-	public void DeccryptMsgMsg(string encryptedMsg, string password, string originalMsg)
+	public void DecryptMsgMsg(string encryptedMsg, string password, string originalMsg)
 	{
 		string decryptedMsg = SimpleCrypto.DecryptMsg(encryptedMsg, password);
 		Assert.That(decryptedMsg, Is.EqualTo(originalMsg));
