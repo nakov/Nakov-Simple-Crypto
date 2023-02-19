@@ -154,6 +154,6 @@ how hashing and symetric encryption algorithms may be designed.
 Note also that **32-bit ciphers are too weak** for real-world crypto hashing and encryption.
 Real-world cryptosystems use blocks of size 256 or more bits to resist **[brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack)**.
 
-Always use proven crypto algorithms, designed by experts in cryptography (like SHA2, SHA3 and AES).
-Designing your own encryption algorithm can be risky and prone to security flaws because it requires
-specialized scientific knowledge, peer review, testing, and robustness against attacks.
+Always use **proven crypto algorithms**, designed by experts in cryptography (like SHA2, SHA3 and AES).
+Designing your own encryption algorithm is risky and prone to security flaws. To design a secure crypto algorithms, you need a deep
+specialized scientific knowledge, and your algorithms should pass peer reviews, thorough testing, and prove resistance against attacks.
