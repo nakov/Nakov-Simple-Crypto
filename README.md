@@ -75,7 +75,7 @@ Hash(msg) --> int32:
 
 ### Designing a Simple Symmetric Encryption Scheme
 
-We propose a **simple symmetric block cipher**, based on `XOR` or each letter from the input message with an **unique sequence of hash values**, derived from the encryption password and some additional parameters.
+We propose a **simple symmetric block cipher**, based on `XOR` or each letter from the input message with an **unique sequence of hash values**, derived from the **encryption password**, the **character offset** in the input message and the **input message** itself.
 
 ### Encryption Algorithm
 
